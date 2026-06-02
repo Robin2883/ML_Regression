@@ -54,6 +54,7 @@ plt.plot(X_train, lin_reg.predict(X_train), color='blue')
 plt.title('Salary vs Experience (Training set)')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
+plt.savefig('trg_set_vs_reg_line.png')
 plt.show()
 
 #Visualising the Test set results
@@ -62,6 +63,7 @@ plt.plot(X_train, lin_reg.predict(X_train), color='blue')
 plt.title('Salary vs Experience (Test set)')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
+plt.savefig('test_set_vs_reg_line.png')
 plt.show()
 
 #checking evaluation metrics
