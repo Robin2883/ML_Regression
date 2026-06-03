@@ -73,4 +73,9 @@ print(f"r2 score : {r2_score}")
 rmse= root_mean_squared_error(y_test, y_pred)
 print(f"RMSE: {rmse}")
 
+#check p-values and confidence interval
+import statsmodels.api as sm
+X_train=sm.add_constant(X_train)
+model=sm.OLS(y_train,X_train).fit()
+print(model.summary())
 
