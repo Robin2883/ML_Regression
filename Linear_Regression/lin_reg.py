@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, root_mean_squared_error
+import statsmodels.api as sm
 
 #data imported from csv file 
 df=pd.read_csv('Salary_Data.csv') 
@@ -71,5 +72,10 @@ r2score=r2_score(y_test, y_pred)
 print(f"R² Score: {r2score}")
 rmse=root_mean_squared_error(y_test, y_pred)
 print(f"rmse value: {rmse}") 
+
+#check p-values and confidence interval
+X_train=sm.add_constant(X_train)
+model=sm.OLS(y_train,X_train).fit()
+print(model.summary())
 
 
