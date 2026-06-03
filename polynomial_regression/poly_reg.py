@@ -28,7 +28,7 @@ lin_reg=LinearRegression()
 lin_reg.fit(X,y)
 
 # Training the Polynomial Regression model on the whole dataset
-poly_reg=PolynomialFeatures(degree=4)
+poly_reg=PolynomialFeatures(degree=4) #ML Engr has to find out the reqr degree. If too low: underfitting, if too high: overfitting. Balance.
 X_poly=poly_reg.fit_transform(X)
 lin_reg_2=LinearRegression()
 lin_reg_2.fit(X_poly, y)
