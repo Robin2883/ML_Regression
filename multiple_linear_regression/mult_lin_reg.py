@@ -76,6 +76,6 @@ print(f"RMSE: {rmse}")
 #check p-values and confidence interval
 import statsmodels.api as sm
 X_train=sm.add_constant(X_train)
-model=sm.OLS(y_train,X_train).fit()
+model=sm.OLS(y_train,X_train).fit(cov_type='HC3') #use cov_type when there is heteroscdecastiicity i.e. diff of variance of residuals
 print(model.summary())
 
